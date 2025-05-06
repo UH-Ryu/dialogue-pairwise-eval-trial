@@ -15,7 +15,7 @@ sys.path.append(os.path.join(os.path.dirname(__file__), ".."))
 from utils.fixed_container import st_fixed_container
 
 # 定数定義
-BASE_DIR = os.path.join(os.abspath.dirname(__file__), "..", "data")
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 OUTPUTS_DIR = os.path.join(BASE_DIR, "outputs")
 PERSONA_FILE = os.path.join(BASE_DIR, "persona_sample.jsonl")
 SEEN_TEST_FILE = os.path.join(BASE_DIR, "seen_test.jsonl")
