@@ -370,7 +370,7 @@ def display_persona_info(persona_data, conversation):
             
             box_content = create_rounded_box(
                 f'<div class="persona-box">{description_text}</div>', 
-                bg_color="darkorange", 
+                bg_color="sandybrown", 
                 height="50vh",
                 enable_scroll=True
             )
