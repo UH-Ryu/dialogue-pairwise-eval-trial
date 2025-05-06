@@ -18,7 +18,7 @@ from utils.fixed_container import st_fixed_container
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 OUTPUTS_DIR = os.path.join(BASE_DIR, "data", "outputs")
 PERSONA_FILE = os.path.join(BASE_DIR, "data", "persona_sample.jsonl")
-SEEN_TEST_FILE = os.path.join(BASE_DIR, "seen_test.jsonl")
+SEEN_TEST_FILE = os.path.join(BASE_DIR, "data", "seen_test.jsonl")
 SPREADSHEET_URL = st.secrets["SPREADSHEET_URL"]  # スプレッドシートのURLを環境変数から取得
 SHEET_NAME = "シート1"  # シート名
 SEED = 42 
