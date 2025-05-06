@@ -318,7 +318,7 @@ def display_navigation_controls(page, page_count, model_pairs):
     user_id_provided = bool(st.session_state.get("user_id", "").strip())
     
     if not user_id_provided and all_evaluated:
-        st.warning("評価を送信するにはユーザーIDを入力してください")
+        st.warning("評価を送信するにはユーザー名を入力してください")
     
     st.button(
         "評価を送信", 
@@ -433,7 +433,7 @@ def submit_evaluations():
     """評価結果を保存する"""
     # ユーザーIDのチェック
     if not st.session_state.user_id.strip():
-        st.error("評価を送信するにはユーザーIDを入力してください")
+        st.error("評価を送信するにはユーザー名を入力してください")
         return False
         
     # 評価データを変換
@@ -533,13 +533,13 @@ def main():
     
     st.title("モデル応答評価用インターフェース")
     
-    # ユーザーID入力欄の追加
+    # ユーザー名入力欄の追加
     st.sidebar.markdown("### ユーザー情報")
     user_id = st.sidebar.text_input(
-        "ユーザーID", 
+        "ユーザー名", 
         value=st.session_state.get("user_id", ""),
         key="input_user_id",
-        placeholder="評価者IDを入力してください"
+        placeholder="ユーザー名を入力してください"
     )
     # ユーザーIDをセッションに保存
     st.session_state.user_id = user_id
