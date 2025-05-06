@@ -16,10 +16,9 @@ from utils.fixed_container import st_fixed_container
 
 # 定数定義
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-OUTPUTS_DIR = os.path.join(BASE_DIR, "outputs")
-PERSONA_FILE = os.path.join(BASE_DIR, "persona_sample.jsonl")
+OUTPUTS_DIR = os.path.join(BASE_DIR, "data", "outputs")
+PERSONA_FILE = os.path.join(BASE_DIR, "data", "persona_sample.jsonl")
 SEEN_TEST_FILE = os.path.join(BASE_DIR, "seen_test.jsonl")
-EVAL_FILE = os.path.join(BASE_DIR, "evaluations.jsonl")
 SPREADSHEET_URL = st.secrets["SPREADSHEET_URL"]  # スプレッドシートのURLを環境変数から取得
 SHEET_NAME = "シート1"  # シート名
 SEED = 42 
@@ -458,9 +457,6 @@ def submit_evaluations():
     print("評価結果集計完了")
     # Google Sheetsに保存を試みる
     result = save_to_google_sheets(evaluation_results)
-    
-    # バックアップとしてローカルファイルにも保存
-    local_save_result = save_json(evaluation_results, EVAL_FILE)
     
     if result:
         st.session_state["submitted"] = True
