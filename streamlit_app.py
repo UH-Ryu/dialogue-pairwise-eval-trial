@@ -191,7 +191,7 @@ def create_rounded_box(content, bg_color="lightgray", text_color="black",
 
 def display_conversation(context_data):
     """会話履歴を表示する関数"""
-    st.markdown("### 対話履歴")
+    st.markdown("#### 対話履歴")
     
     # JSONLからのデータを適切な形式に変換
     messages = []
@@ -228,7 +228,7 @@ def display_response_options(page, model_pair, model_responses, conversation):
     """回答オプションを表示する関数"""
     speaker = conversation.get("speaker", "")
     # st.write(f"この対話に続く{speaker}の応答として、どちらがより自然か評価してください。")
-    st.write(f"この対話に続く{speaker}の応答について、どちらの応答によりキャラクター情報が反映されているか評価してください。")
+    st.markdown(f"##### この対話に続く{speaker}の応答について、どちらの応答によりキャラクター情報が反映されているか評価してください。")
     # st.write(f"この対話に続く{speaker}の応答として、どちらが正解応答により近いか評価してください。")
 
     model_a, model_b = model_pair
