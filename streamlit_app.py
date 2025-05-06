@@ -223,9 +223,9 @@ def display_model_response(response, model_name, box_color):
 def display_response_options(page, model_pair, model_responses, conversation):
     """回答オプションを表示する関数"""
     speaker = conversation.get("speaker", "")
-    # st.write(f"この対話に続く{speaker}の応答としてどちらが自然か評価してください。")
-    st.write(f"この対話に続く{speaker}の応答について、どちらの応答がキャラクター情報が反映されているか評価してください。")
-    # st.write(f"この対話に続く{speaker}の応答として正解応答にどちらが近いか評価してください。")
+    # st.write(f"この対話に続く{speaker}の応答として、どちらがより自然か評価してください。")
+    st.write(f"この対話に続く{speaker}の応答について、どちらの応答によりキャラクター情報が反映されているか評価してください。")
+    # st.write(f"この対話に続く{speaker}の応答として、どちらが正解応答により近いか評価してください。")
 
     model_a, model_b = model_pair
     response_a = find_response_for_context(model_responses[model_a], page)
@@ -366,7 +366,7 @@ def display_persona_info(persona_data, conversation):
             
             box_content = create_rounded_box(
                 f'<div class="persona-box">{description_text}</div>', 
-                bg_color="lightblue", 
+                bg_color="darkorange", 
                 height="50vh",
                 enable_scroll=True
             )
