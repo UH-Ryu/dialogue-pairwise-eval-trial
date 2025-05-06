@@ -28,6 +28,10 @@ random.seed(SEED)
 # サンプル数の設定（バックエンド側で固定）
 SAMPLE_SIZE = 5  # 評価に使用するサンプル数
 
+# タイムスタンプの日本時間対応
+t_delta = datetime.timedelta(hours=9)  # 9時間
+JST = datetime.timezone(t_delta, 'JST')  # UTCから9時間差の「JST」タイムゾーン
+
 # 利用可能なモデルのリスト
 AVAILABLE_MODELS = [
     "gpt4o_conv_sample",
@@ -435,7 +439,7 @@ def submit_evaluations():
     # 評価データを変換
     evaluation_results = {
         "user_id": st.session_state.user_id,  # ユーザーIDを追加
-        "timestamp": str(datetime.datetime.now()),  # タイムスタンプを追加
+        "timestamp": str(datetime.datetime.now(JST)),  # タイムスタンプを追加
         "evaluations": {}
     }
     
